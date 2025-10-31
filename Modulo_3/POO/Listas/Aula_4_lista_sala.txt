@@ -1,0 +1,36 @@
+🧩 Exercício: Sistema de Funcionários – Herança e Polimorfismo
+🎯 Objetivo:
+
+Praticar reutilização e extensão de código usando Herança e Polimorfismo em Python.
+
+🧱 Descrição:
+
+Crie uma hierarquia de classes que represente diferentes tipos de Funcionários de uma empresa.
+
+Crie uma classe base chamada Funcionario, com:
+
+Atributos: nome e salario_base
+
+Método:
+
+def calcular_pagamento(self):
+    return self.salario_base
+
+
+Método:
+
+def exibir_informacoes(self):
+    print(f"Funcionário: {self.nome} - Salário: R${self.calcular_pagamento()}")
+
+
+Crie uma subclasse chamada Gerente que herda de Funcionario e:
+
+Possui um atributo adicional: bonus
+
+Sobrescreve (override) o método calcular_pagamento() para incluir o bônus no total.
+
+Crie outra subclasse chamada Vendedor que também herda de Funcionario e:
+
+Possui um atributo adicional: comissao
+
+Sobrescreve o método calcular_pagamento() para somar o salário base e a comissão.
