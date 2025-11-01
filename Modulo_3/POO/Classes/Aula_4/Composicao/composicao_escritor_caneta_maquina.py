@@ -47,4 +47,4 @@ del escritor
 try:
     escritor.caneta.escrever()
 except NameError:
-    print("\n❌ O escritor e suas ferramentas foram destruídos. Nada mais existe.")
+    print("\n❌ O escritor e suas ferramentas foram destruídos.")

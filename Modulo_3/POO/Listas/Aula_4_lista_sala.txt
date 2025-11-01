@@ -9,12 +9,12 @@ Crie uma hierarquia de classes que represente diferentes tipos de Funcionários 
 
 Crie uma classe base chamada Funcionario, com:
 
-Atributos: nome e salario_base
+Atributos: nome e __salario_base
 
 Método:
 
 def calcular_pagamento(self):
-    return self.salario_base
+    return self.__salario_base
 
 
 Método:

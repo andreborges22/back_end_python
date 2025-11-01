@@ -15,7 +15,6 @@ try:
     curso = Curso("POO em Python", "João Silva")
     print(f"Professor do curso de {curso.nome}: {curso.professor.nome}")
     del curso
-    print(f"Professor do curso de {curso.nome}: {curso.professor.nome}")
-    # Saída: Professor do curso de POO em Python: João Silva
+    print(f"Professor do curso de {curso.nome}: {curso.professor.nome}")        
 except Exception as e:
     print(f"Erro: {e}")
