@@ -3,4 +3,4 @@ class Animal:
         self.nome = nome
 
     def emitirSom(self):
-            pass
+            return (f"{self.nome} está emitindo um som genérico")
