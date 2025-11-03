@@ -4,7 +4,7 @@ class Aluno:
         self.cursos = []  # associação: lista de cursos em que o aluno está inscrito
         print(f"Objeto '{self.nome}' sendo construído.")
 
-    def __del__(self):
+    def __del__(self):             
         print(f"Objeto '{self.nome}' sendo destruído.")
 
     def inscrever(self, curso):
@@ -14,7 +14,6 @@ class Aluno:
 
     def __str__(self):
         return f"Aluno: {self.nome}"
-
 
 class Curso:
     def __init__(self, nome):
@@ -28,6 +27,10 @@ class Curso:
     def adicionar_aluno(self, aluno):
         if aluno not in self.alunos:
             self.alunos.append(aluno)
+
+    def deletar_aluno(self, aluno):
+        if aluno in self.alunos:
+            self.alunos.remove(aluno)
 
     def __str__(self):
         return f"Curso: {self.nome}"
