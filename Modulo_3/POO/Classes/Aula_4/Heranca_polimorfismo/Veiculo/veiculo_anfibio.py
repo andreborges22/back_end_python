@@ -1,6 +1,6 @@
-from veiculo import *
-from veiculo_voador import *
-from veiculo_flutuante import *
+from veiculo import Veiculo
+from veiculo_voador import VeiculoVoador
+from veiculo_flutuante import VeiculoFlutuante
 
 class VeiculoAnfibio(VeiculoVoador, VeiculoFlutuante):
     def __init__(self, nome):
