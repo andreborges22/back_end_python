@@ -28,72 +28,20 @@ Use listas para armazenar as relações e garanta que a associação funcione no
 
 🧱 Exercício 2 – Composição
 
-Conceito: Uma classe contém outra, e a parte depende do todo para existir.
+📝 Enunciado:
 
-Enunciado:
+Crie um programa em Python com as classes Computador e Componente.
 
-Crie um programa com as classes Carro e Motor.
+Um Computador é formado por vários Componentes (como processador, memória e armazenamento).
 
-Um carro possui um motor (ou seja, o motor não existe sem o carro).
+Os Componentes são criados dentro do objeto Computador (não existem sem ele).
 
-Quando o carro é destruído, o motor também deixa de existir.
-
-👉 Faça o seguinte:
-
-Crie a classe Motor com atributos como potencia e tipo.
-
-Crie a classe Carro que cria o objeto Motor dentro do construtor (__init__).
-
-Exiba informações completas do carro, incluindo as do motor.
-
-Dica: Na composição, o objeto Motor é criado dentro da classe Carro e não é compartilhado.
-=======
-🧩 Exercício 1 – Associação
-
-Conceito: As classes se relacionam, mas existem independentemente.
-
-Enunciado:
-
-Crie um programa em Python com as classes Professor e Disciplina.
-
-Um professor pode lecionar várias disciplinas.
-
-Uma disciplina pode ser ministrada por diferentes professores.
-
-Se um professor sai da escola, a disciplina continua existindo.
-
-Se a disciplina é cancelada, o professor continua existindo.
+Quando o Computador é destruído, todos os seus componentes deixam de existir.
 
 👉 Implemente métodos que:
 
-Adicionem uma disciplina ao professor.
+Adicionem componentes ao computador.
 
-Mostrem as disciplinas de cada professor.
+Mostrem todos os componentes instalados.
 
-Mostrem os professores de cada disciplina.
-
-Use listas para armazenar as relações e garanta que a associação funcione nos dois sentidos.
-
-
-🧱 Exercício 2 – Composição
-
-Conceito: Uma classe contém outra, e a parte depende do todo para existir.
-
-Enunciado:
-
-Crie um programa com as classes Carro e Motor.
-
-Um carro possui um motor (ou seja, o motor não existe sem o carro).
-
-Quando o carro é destruído, o motor também deixa de existir.
-
-👉 Faça o seguinte:
-
-Crie a classe Motor com atributos como potencia e tipo.
-
-Crie a classe Carro que cria o objeto Motor dentro do construtor (__init__).
-
-Exiba informações completas do carro, incluindo as do motor.
-
-Dica: Na composição, o objeto Motor é criado dentro da classe Carro e não é compartilhado.
->>>>>>> 6a44d6535953916240108d1fb2ced3c1e4f6fe21
+Simulem a destruição do computador (mostrando que os componentes são apagados junto).
