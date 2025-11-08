@@ -7,8 +7,8 @@ class Vendedor(Funcionario):
         self.__comissao = comissao
 
     def calcularPagamento(self):
-        self._salario += self.__comissao
-        return self._salario
+        self.salario = self.__comissao
+        return self.salario
     
     def exibirInformacoes(self):
         print(f"Vendedor: {self.nome} - Salário: R${self.calcularPagamento()}")

@@ -8,8 +8,8 @@ class Gerente(Funcionario):
 
 
     def calcularPagamento(self):
-        self._salario += self.__bonus
-        return self._salario
+        self.salario = self.__bonus
+        return self.salario
     
     def exibirInformacoes(self):
         print(f"Gerente: {self.nome} - Salário: R${self.calcularPagamento()}")

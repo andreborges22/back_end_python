@@ -34,3 +34,34 @@ Crie outra subclasse chamada Vendedor que também herda de Funcionario e:
 Possui um atributo adicional: comissao
 
 Sobrescreve o método calcular_pagamento() para somar o salário base e a comissão.
+
+🚙 Exercício: Veículos e o Ato de Dirigir
+🎯 Objetivo:
+
+Praticar os conceitos de Herança (compartilhar atributos e métodos entre classes) e Polimorfismo (mesmo método com comportamentos diferentes).
+
+🧩 Enunciado:
+
+Crie uma classe chamada Veiculo com:
+
+Um método dirigir() que retorna "O veículo está se movendo.".
+
+Um método descricao() que mostra o nome da classe e o resultado de dirigir().
+
+Crie três subclasses de Veiculo:
+
+Carro
+
+Moto
+
+Caminhao
+
+Cada uma deve sobrescrever o método dirigir():
+
+Carro → "O carro está acelerando na estrada."
+
+Moto → "A moto está fazendo uma curva."
+
+Caminhao → "O caminhão está transportando carga."
+
+Crie uma lista com diferentes veículos e percorra-a chamando o método descricao() de cada um.

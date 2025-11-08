@@ -19,5 +19,10 @@ print(f"Professor do curso de {curso.nome}: {curso.professor.nome}")
 # Saída: Professor do curso de POO em Python: João Silva
 
 # destruição de objetos
+print("Deletando o curso")
 del curso
 print(prof.nome)
+
+'''print("Deletando o professor")
+del prof
+print(curso.nome)'''
