@@ -9,7 +9,7 @@ class Curso:
 
     def get_professor(self):
         return self.professor
-
+#atualizando no git
 # Criação dos objetos
 try:
     curso = Curso("POO em Python", "João Silva")
