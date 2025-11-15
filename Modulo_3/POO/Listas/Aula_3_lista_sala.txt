@@ -1,0 +1,29 @@
+🧩 Exercício: Conta Bancária com Encapsulamento
+
+Crie uma classe chamada ContaBancaria que represente uma conta simples de banco.
+
+Requisitos:
+
+A classe deve ter os seguintes atributos privados:
+
+_titular (nome do cliente)
+
+_saldo (valor da conta)
+
+Crie o método construtor __init__() para inicializar esses atributos.
+O saldo inicial deve começar em 0.
+
+Implemente métodos de instância para:
+
+depositar(valor) → adiciona valor ao saldo, apenas se for positivo.
+
+sacar(valor) → retira valor do saldo, se houver saldo suficiente.
+
+mostrar_saldo() → exibe o saldo atual.
+
+Use o @property para criar um getter do titular,
+e um setter que não permita nomes vazios.
+
+🧠 Desafio extra:
+
+Adicione um método chamado transferir(valor, outra_conta) que permita transferir dinheiro de uma conta para outra, respeitando as mesmas regras de saque e depósito.

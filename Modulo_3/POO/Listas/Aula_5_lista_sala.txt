@@ -1,0 +1,47 @@
+<<<<<<< HEAD
+🧩 Exercício 1 – Associação
+
+Conceito: As classes se relacionam, mas existem independentemente.
+
+Enunciado:
+
+Crie um programa em Python com as classes Professor e Disciplina.
+
+Um professor pode lecionar várias disciplinas.
+
+Uma disciplina pode ser ministrada por diferentes professores.
+
+Se um professor sai da escola, a disciplina continua existindo.
+
+Se a disciplina é cancelada, o professor continua existindo.
+
+👉 Implemente métodos que:
+
+Adicionem uma disciplina ao professor.
+
+Mostrem as disciplinas de cada professor.
+
+Mostrem os professores de cada disciplina.
+
+Use listas para armazenar as relações e garanta que a associação funcione nos dois sentidos.
+
+
+🧱 Exercício 2 – Composição
+
+📝 Enunciado:
+
+Crie um programa em Python com as classes Computador e Componente.
+
+Um Computador é formado por vários Componentes (como processador, memória e armazenamento).
+
+Os Componentes são criados dentro do objeto Computador (não existem sem ele).
+
+Quando o Computador é destruído, todos os seus componentes deixam de existir.
+
+👉 Implemente métodos que:
+
+Adicionem componentes ao computador.
+
+Mostrem todos os componentes instalados.
+
+Simulem a destruição do computador (mostrando que os componentes são apagados junto).
