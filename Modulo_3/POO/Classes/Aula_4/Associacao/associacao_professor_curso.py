@@ -6,13 +6,19 @@ class Professor:
     def __del__(self):
         print(f"Objeto '{self.nome}' sendo destruído.")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63172a34a13137afd6bbd75fb6a7e71649664f36
 class Curso:
     def __init__(self, nome, professor):
         self.nome = nome
         self.professor = professor  # associação
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63172a34a13137afd6bbd75fb6a7e71649664f36
 # Criação dos objetos
 prof = Professor("João Silva")
 curso = Curso("POO em Python", prof)

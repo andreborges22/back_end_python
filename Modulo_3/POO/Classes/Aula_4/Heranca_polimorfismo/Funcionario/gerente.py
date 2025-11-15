@@ -12,4 +12,8 @@ class Gerente(Funcionario):
         return self.salario
     
     def exibirInformacoes(self):
+<<<<<<< HEAD
         print(f"Gerente: {self.nome} - Salário: R${self.calcularPagamento()}")
+=======
+        print(f"Gerente: {self.nome} - Salário: R${self.calcularPagamento()}")
+>>>>>>> 63172a34a13137afd6bbd75fb6a7e71649664f36
