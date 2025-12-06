@@ -29,7 +29,6 @@ class Escritor:
         print(f"{self.nome} começa a escrever com a máquina:")
         self.maquina.escrever()
 
-<<<<<<< HEAD
 
 try:
     # --- Demonstração ---
@@ -41,24 +40,6 @@ try:
     del escritor
 
     # Tentativa de usar as ferramentas (não é possível)
-=======
-    def escrever(self,ferramenta):
-        print(f"{self.nome} começa a escrever com a {ferramenta.nome}:")
-        ferramenta.escrever()
-
-
-# --- Demonstração ---
-escritor = Escritor("André")
-escritor.escrever_com_caneta()
-escritor.escrever_com_maquina()
-
-
-# Agora, ao apagar o escritor, suas ferramentas também deixam de existir
-del escritor
-
-# Tentativa de usar as ferramentas (não é possível)
-try:
->>>>>>> 63172a34a13137afd6bbd75fb6a7e71649664f36
     escritor.caneta.escrever()
 except NameError:
     print("\n❌ O escritor e suas ferramentas foram destruídos.")

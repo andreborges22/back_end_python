@@ -1,0 +1,106 @@
+📌 Exercícios SQL — Comando SELECT (Baseado nos registros fornecidos)
+1. Seleção Simples
+
+Selecione todos os clientes cadastrados.
+
+Liste apenas os nomes e cidades dos clientes.
+
+Mostre nome, idade e estado de todos os clientes.
+
+2. Filtros com WHERE
+
+Selecione todos os clientes do estado de SP.
+
+Liste os clientes do sexo F.
+
+Encontre os clientes com idade acima de 30 anos.
+
+Mostre os clientes que moram na cidade de Rio de Janeiro.
+
+Encontre o cliente cujo e-mail é 'rafaelgomes@email.com'.
+
+3. LIKE — Busca parcial
+
+Liste os clientes cujo nome começa com “J”.
+
+Encontre clientes cujo e-mail contém a palavra “email”.
+
+Mostre clientes cujo endereço contém “Rua”.
+
+4. ORDER BY
+
+Liste todos os clientes ordenados pela idade (do menor para o maior).
+
+Liste todos os clientes ordenados por nome em ordem decrescente.
+
+Mostre os clientes ordenados pela data de cadastro (mais novos primeiro).
+
+5. Funções de Agregação
+
+Conte quantos clientes existem na tabela.
+
+Retorne a maior idade entre os clientes.
+
+Retorne a menor idade.
+
+Mostre a data de cadastro mais recente.
+
+Conte quantos clientes há em cada estado.
+
+6. GROUP BY
+
+Agrupe os clientes por estado e mostre quantos clientes há em cada um.
+
+Agrupe os clientes por cidade e mostre a quantidade em cada uma.
+
+Agrupe por sexo e mostre quantos homens e mulheres existem.
+
+7. HAVING (Grupo com condição)
+
+Mostre os estados que possuem mais de 1 cliente.
+
+Exiba as cidades que têm ao menos 2 clientes.
+
+8. Operações com datas
+
+Mostre os clientes cadastrados após 2025-03-01.
+
+Liste os clientes cadastrados em março de 2025.
+
+9. Filtros compostos
+
+Clientes do sexo F que moram em SP.
+
+Clientes com idade entre 25 e 35 anos.
+
+Clientes que moram no Sudeste (SP, RJ, MG).
+
+Clientes cujo nome contém “a” e são do sexo F.
+
+10. Alias (AS)
+
+Liste nome e email, renomeando email como contato.
+
+Liste id_cliente e data_cadastro renomeando para data_registro.
+
+11. LIMIT / TOP (dependendo do SQL)
+
+Mostre os 3 clientes mais novos (menor idade).
+
+Mostre os 2 últimos clientes cadastrados.
+
+12. Exercícios Desafiadores
+
+Mostre o nome e telefone dos clientes cujo DDD é 11.
+
+Encontre todos os clientes cujo sobrenome seja “Silva”.
+
+Mostre todos os clientes cujo CEP pertence ao estado informado (verifique os dois primeiros dígitos do CEP usando LIKE).
+
+Retorne nome, cidade e um campo calculado dizendo:
+
+'Adulto' se idade ≥ 18
+
+'Menor' caso contrário
+
+(Use CASE)

@@ -1,8 +1,7 @@
 # Exemplo Completo: Conta Bancária com Tratamento Interno
 class SaldoInsuficienteError(Exception):
     def __init__(self, saldo, saque):
-        super().__init__(
-            f"Erro: saldo insuficiente! Saldo: R${saldo}, Saque: R${saque}")
+        super().__init__(f"Erro: saldo insuficiente! Saldo: R${saldo}, Saque: R${saque}")
 
 
 class Conta:
