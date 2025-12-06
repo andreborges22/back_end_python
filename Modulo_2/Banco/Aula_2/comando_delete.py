@@ -11,7 +11,7 @@ try:
     # imprime o resultado: fetchone para uma linha, fetchall para varias
     print(f"Tabelas do banco cliente.db: {res.fetchone()}")
     # select diretamente
-    res = cursor.execute("select * from cliente")
+    # res = cursor.execute("select * from cliente")
     # res = cursor.execute("select nome,idade from cliente"
     #                     " where sexo like 'M'"
     #                     " and idade > 40"
@@ -20,13 +20,12 @@ try:
     #                     )
 
     # select usando o for
-    # for linha in cursor.execute("select nome,idade from cliente where sexo like 'M' and idade >= 40 order by idade limit 3"):
-    #    print(linha)
-
+    cursor.execute("DELETE FROM cliente where id_cliente = 20")
+    # print(res.fetchall())
 except Exception as e:
     print(f"Erro: {e}")
 else:
-    print(res.fetchall())
+    con.commit()
 finally:
     # fechando o cursor
     cursor.close()

@@ -50,13 +50,14 @@ try:
     'QS 11 Conjunto 4', 'Brasília', 'DF', '72025-111', '2025-04-10');
     '''
     cursor.execute(sql_insert_cliente)
-    con.commit()
 # captura excecao, se houver
 except Exception as e:
     # desfaz a operacao
     con.rollback()
     # imprime a execao, se houver
     print(f"Erro: {e}")
+else:
+    con.commit()
 finally:
     # fecha o cursor
     cursor.close()
