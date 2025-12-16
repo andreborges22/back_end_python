@@ -8,8 +8,8 @@ try:
     cursor = con.cursor()
     # variavel que armazena comando de criacao da tabela
     sql_create_cliente = '''-- Criação da tabela cliente
-    CREATE TABLE if not exists cliente (
-        id_cliente INT PRIMARY KEY,
+    CREATE TABLE IF NOT EXISTS cliente (
+        id_cliente INT PRIMARY KEY NOT NULL,
         nome VARCHAR(100) NOT NULL,
         idade INT,
         sexo CHAR(1),

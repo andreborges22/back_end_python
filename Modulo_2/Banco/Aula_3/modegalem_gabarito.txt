@@ -1,0 +1,153 @@
+📘 GABARITO — Modelagem Conceitual (DER Explicado)
+
+Observação didática:
+Em todos os exemplos:
+
+A entidade é um substantivo (Aluno, Cliente, Livro etc.)
+
+A chave primária (PK) identifica unicamente a entidade
+
+A cardinalidade indica quantos registros se relacionam
+
+🟦 Exercício 1 – Escola
+Entidades:
+
+Aluno (id_aluno, nome)
+
+Turma (id_turma, nome)
+
+Relacionamento:
+
+Turma — possui — Aluno
+
+Cardinalidade: 1 : N
+
+Uma turma → vários alunos
+
+Um aluno → apenas uma turma
+
+Explicação:
+
+Cada aluno está matriculado em uma única turma, mas uma turma pode ter vários alunos.
+
+🟦 Exercício 2 – Biblioteca
+Entidades:
+
+Autor (id_autor, nome)
+
+Livro (id_livro, titulo)
+
+Relacionamento:
+
+Autor — escreve — Livro
+
+Cardinalidade: N : N
+
+Explicação:
+
+Um autor pode escrever vários livros e um livro pode ter mais de um autor.
+➡️ Relacionamento muitos para muitos.
+
+(Em modelo lógico, isso exigiria uma entidade associativa, mas no conceitual basta indicar N:N.)
+
+🟦 Exercício 3 – Loja
+Entidades:
+
+Cliente (id_cliente, nome)
+
+Pedido (id_pedido, data)
+
+Relacionamento:
+
+Cliente — realiza — Pedido
+
+Cardinalidade: 1 : N
+
+Explicação:
+
+Um cliente pode fazer vários pedidos, mas cada pedido pertence a um único cliente.
+
+🟦 Exercício 4 – Hospital
+Entidades:
+
+Médico (crm, nome)
+
+Paciente (id_paciente, nome)
+
+Relacionamento:
+
+Médico — atende — Paciente
+
+Cardinalidade: N : N
+
+Explicação:
+
+Um médico atende vários pacientes e um paciente pode ser atendido por vários médicos.
+
+🟦 Exercício 5 – Empresa
+Entidades:
+
+Funcionário (matricula, nome)
+
+Departamento (id_departamento, nome)
+
+Relacionamento:
+
+Departamento — possui — Funcionário
+
+Cardinalidade: 1 : N
+
+Explicação:
+
+Um departamento tem vários funcionários, mas um funcionário trabalha em apenas um departamento.
+
+🟦 Exercício 6 – Curso Online
+Entidades:
+
+Aluno (id_aluno, nome)
+
+Curso (id_curso, titulo)
+
+Relacionamento:
+
+Aluno — matricula-se — Curso
+
+Cardinalidade: N : N
+
+Explicação:
+
+Um aluno pode se matricular em vários cursos e um curso pode ter vários alunos.
+
+🟦 Exercício 7 – Estacionamento
+Entidades:
+
+Veículo (placa, modelo)
+
+Vaga (numero_vaga)
+
+Relacionamento:
+
+Veículo — ocupa — Vaga
+
+Cardinalidade: 1 : 1
+
+Explicação:
+
+Um veículo ocupa apenas uma vaga e uma vaga pode estar ocupada por apenas um veículo por vez.
+
+🟦 Exercício 8 – Rede Social
+Entidades:
+
+Usuário (id_usuario, nome)
+
+Postagem (id_postagem, texto)
+
+Relacionamento:
+
+Usuário — cria — Postagem
+
+Cardinalidade: 1 : N
+
+Explicação:
+
+Um usuário pode criar várias postagens, mas cada postagem pertence a um único usuário.

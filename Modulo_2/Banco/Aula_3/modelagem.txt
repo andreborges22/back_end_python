@@ -1,0 +1,135 @@
+🟦 Exercício 1 – Escola
+
+Uma escola deseja armazenar informações sobre alunos e turmas.
+
+Cada aluno pertence a uma única turma
+
+Uma turma pode ter vários alunos
+
+Regras:
+
+Aluno: código, nome
+
+Turma: código, nome
+
+👉 Tarefa:
+Modele as entidades e o relacionamento entre elas.
+
+🟦 Exercício 2 – Biblioteca
+
+Uma biblioteca deseja controlar livros e autores.
+
+Um autor pode escrever vários livros
+
+Um livro pode ter mais de um autor
+
+Regras:
+
+Autor: código, nome
+
+Livro: código, título
+
+👉 Tarefa:
+Modele o DER indicando corretamente o relacionamento.
+
+🟦 Exercício 3 – Loja
+
+Uma loja deseja registrar clientes e pedidos.
+
+Um cliente pode fazer vários pedidos
+
+Um pedido pertence a apenas um cliente
+
+Regras:
+
+Cliente: código, nome
+
+Pedido: número, data
+
+👉 Tarefa:
+Crie o modelo conceitual com entidades, atributos e relacionamento.
+
+🟦 Exercício 4 – Hospital
+
+Um hospital precisa armazenar informações sobre médicos e pacientes.
+
+Um médico atende vários pacientes
+
+Um paciente pode ser atendido por vários médicos
+
+Regras:
+
+Médico: CRM, nome
+
+Paciente: código, nome
+
+👉 Tarefa:
+Modele o DER e identifique o tipo de relacionamento.
+
+🟦 Exercício 5 – Empresa
+
+Uma empresa deseja controlar funcionários e departamentos.
+
+Um departamento possui vários funcionários
+
+Um funcionário trabalha em apenas um departamento
+
+Regras:
+
+Funcionário: matrícula, nome
+
+Departamento: código, nome
+
+👉 Tarefa:
+Desenhe o modelo conceitual correto.
+
+🟦 Exercício 6 – Curso Online
+
+Uma plataforma de cursos deseja controlar alunos e cursos.
+
+Um aluno pode se matricular em vários cursos
+
+Um curso pode ter vários alunos
+
+Regras:
+
+Aluno: código, nome
+
+Curso: código, título
+
+👉 Tarefa:
+Crie o DER e indique o relacionamento.
+
+🟦 Exercício 7 – Estacionamento
+
+Um estacionamento deseja registrar veículos e vagas.
+
+Um veículo ocupa uma vaga
+
+Uma vaga pode estar ocupada por apenas um veículo por vez
+
+Regras:
+
+Veículo: placa, modelo
+
+Vaga: número
+
+👉 Tarefa:
+Modele o relacionamento corretamente.
+
+🟦 Exercício 8 – Rede Social (bem simples)
+
+Uma rede social deseja armazenar usuários e postagens.
+
+Um usuário pode criar várias postagens
+
+Uma postagem pertence a um único usuário
+
+Regras:
+
+Usuário: id, nome
+
+Postagem: id, texto
+
+👉 Tarefa:
+Desenhe o modelo conceitual.
