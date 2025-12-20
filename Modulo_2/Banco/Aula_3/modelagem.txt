@@ -49,87 +49,37 @@ Pedido: número, data
 👉 Tarefa:
 Crie o modelo conceitual com entidades, atributos e relacionamento.
 
-🟦 Exercício 4 – Hospital
+📝 Texto 1 – Escola
 
-Um hospital precisa armazenar informações sobre médicos e pacientes.
+Uma escola deseja organizar informações sobre alunos, turmas e professores.
 
-Um médico atende vários pacientes
+Cada aluno possui um código e um nome.
+Cada turma possui um código e um nome.
+Cada professor possui um código e um nome.
 
-Um paciente pode ser atendido por vários médicos
+Cada aluno está matriculado em apenas uma turma.
+Uma turma pode ter vários alunos.
 
-Regras:
+Cada turma é ministrada por um professor, e um professor pode ministrar várias turmas.
 
-Médico: CRM, nome
+📝 Texto 2 – Loja
 
-Paciente: código, nome
+Uma loja deseja controlar clientes, pedidos e produtos.
 
-👉 Tarefa:
-Modele o DER e identifique o tipo de relacionamento.
+Cada cliente possui um código e um nome.
+Cada pedido possui um número e uma data.
+Cada produto possui um código e uma descrição.
 
-🟦 Exercício 5 – Empresa
+Um cliente pode realizar vários pedidos, mas cada pedido pertence a um único cliente.
+Um pedido pode conter vários produtos, e um produto pode estar presente em vários pedidos.
 
-Uma empresa deseja controlar funcionários e departamentos.
+📝 Texto 3 – Biblioteca
 
-Um departamento possui vários funcionários
+Uma biblioteca deseja armazenar informações sobre livros, autores e editoras.
 
-Um funcionário trabalha em apenas um departamento
+Cada autor possui um código e um nome.
+Cada livro possui um código e um título.
+Cada editora possui um código e um nome.
 
-Regras:
-
-Funcionário: matrícula, nome
-
-Departamento: código, nome
-
-👉 Tarefa:
-Desenhe o modelo conceitual correto.
-
-🟦 Exercício 6 – Curso Online
-
-Uma plataforma de cursos deseja controlar alunos e cursos.
-
-Um aluno pode se matricular em vários cursos
-
-Um curso pode ter vários alunos
-
-Regras:
-
-Aluno: código, nome
-
-Curso: código, título
-
-👉 Tarefa:
-Crie o DER e indique o relacionamento.
-
-🟦 Exercício 7 – Estacionamento
-
-Um estacionamento deseja registrar veículos e vagas.
-
-Um veículo ocupa uma vaga
-
-Uma vaga pode estar ocupada por apenas um veículo por vez
-
-Regras:
-
-Veículo: placa, modelo
-
-Vaga: número
-
-👉 Tarefa:
-Modele o relacionamento corretamente.
-
-🟦 Exercício 8 – Rede Social (bem simples)
-
-Uma rede social deseja armazenar usuários e postagens.
-
-Um usuário pode criar várias postagens
-
-Uma postagem pertence a um único usuário
-
-Regras:
-
-Usuário: id, nome
-
-Postagem: id, texto
-
-👉 Tarefa:
-Desenhe o modelo conceitual.
+Um autor pode escrever vários livros, e um livro pode ter mais de um autor.
+Cada livro é publicado por uma única editora, e uma editora pode publicar vários livros.
