@@ -1,0 +1,163 @@
+/* =====================================================
+   ARQUIVO: joins_sqlite_completo.sql
+   OBJETIVO: Criar, popular e aplicar JOINs no SQLite
+   CONTÉM:
+   - CREATE TABLE
+   - INSERT
+   - Consultas com INNER JOIN, LEFT JOIN
+   - Simulação de RIGHT JOIN (SQLite)
+   ===================================================== */
+
+
+/* =====================================================
+   1. CRIAÇÃO DAS TABELAS
+   ===================================================== */
+
+DROP TABLE IF EXISTS matricula;
+DROP TABLE IF EXISTS aluno;
+DROP TABLE IF EXISTS curso;
+
+CREATE TABLE aluno (
+    id_aluno INTEGER PRIMARY KEY,
+    nome TEXT,
+    email TEXT
+);
+
+CREATE TABLE curso (
+    id_curso INTEGER PRIMARY KEY,
+    nome TEXT,
+    carga_horaria INTEGER
+);
+
+CREATE TABLE matricula (
+    id_matricula INTEGER PRIMARY KEY,
+    id_aluno INTEGER,
+    id_curso INTEGER,
+    data_matricula DATE,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
+    FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
+);
+
+
+/* =====================================================
+   2. POPULAÇÃO DAS TABELAS
+   ===================================================== */
+
+-- Alunos
+INSERT INTO aluno VALUES
+(1, 'Ana Silva', 'ana@email.com'),
+(2, 'Bruno Costa', 'bruno@email.com'),
+(3, 'Carlos Lima', 'carlos@email.com'),
+(4, 'Daniela Rocha', 'daniela@email.com');
+
+-- Cursos
+INSERT INTO curso VALUES
+(1, 'Banco de Dados', 60),
+(2, 'Programação em Python', 80),
+(3, 'Redes de Computadores', 40);
+
+-- Matrículas
+INSERT INTO matricula VALUES
+(1, 1, 1, '2025-01-10'),
+(2, 1, 2, '2025-01-12'),
+(3, 2, 2, '2025-01-15'),
+(4, 3, 1, '2025-01-20');
+
+
+/* =====================================================
+   3. CONSULTAS – GABARITO COMENTADO
+   ===================================================== */
+
+
+/* -----------------------------------------------------
+   3.1 INNER JOIN
+   Retorna somente alunos que possuem matrícula
+   ----------------------------------------------------- */
+SELECT 
+    aluno.nome AS aluno,
+    curso.nome AS curso
+FROM aluno
+INNER JOIN matricula 
+    ON aluno.id_aluno = matricula.id_aluno
+INNER JOIN curso 
+    ON curso.id_curso = matricula.id_curso;
+
+
+/* -----------------------------------------------------
+   3.2 LEFT JOIN
+   Retorna todos os alunos, mesmo sem matrícula
+   ----------------------------------------------------- */
+SELECT 
+    aluno.nome AS aluno,
+    curso.nome AS curso
+FROM aluno
+LEFT JOIN matricula 
+    ON aluno.id_aluno = matricula.id_aluno
+LEFT JOIN curso 
+    ON curso.id_curso = matricula.id_curso;
+
+
+/* -----------------------------------------------------
+   3.3 RIGHT JOIN (SIMULADO NO SQLITE)
+   Retorna todos os cursos, mesmo sem alunos
+   ----------------------------------------------------- */
+SELECT 
+    aluno.nome AS aluno,
+    curso.nome AS curso
+FROM curso
+LEFT JOIN matricula 
+    ON curso.id_curso = matricula.id_curso
+LEFT JOIN aluno 
+    ON aluno.id_aluno = matricula.id_aluno;
+
+
+/* -----------------------------------------------------
+   3.4 Alunos sem matrícula
+   ----------------------------------------------------- */
+SELECT 
+    aluno.nome
+FROM aluno
+LEFT JOIN matricula 
+    ON aluno.id_aluno = matricula.id_aluno
+WHERE matricula.id_aluno IS NULL;
+
+
+/* -----------------------------------------------------
+   3.5 Cursos sem alunos
+   ----------------------------------------------------- */
+SELECT 
+    curso.nome
+FROM curso
+LEFT JOIN matricula 
+    ON curso.id_curso = matricula.id_curso
+WHERE matricula.id_curso IS NULL;
+
+
+/* -----------------------------------------------------
+   3.6 Quantidade de alunos por curso
+   ----------------------------------------------------- */
+SELECT 
+    curso.nome AS curso,
+    COUNT(matricula.id_aluno) AS total_alunos
+FROM curso
+LEFT JOIN matricula 
+    ON curso.id_curso = matricula.id_curso
+GROUP BY curso.nome;
+
+
+/* -----------------------------------------------------
+   3.7 Alunos matriculados em mais de um curso
+   ----------------------------------------------------- */
+SELECT 
+    aluno.nome,
+    COUNT(matricula.id_curso) AS total_cursos
+FROM aluno
+INNER JOIN matricula 
+    ON aluno.id_aluno = matricula.id_aluno
+GROUP BY aluno.nome
+HAVING COUNT(matricula.id_curso) > 1;
+
+
+/* =====================================================
+   FIM DO ARQUIVO
+   ===================================================== */

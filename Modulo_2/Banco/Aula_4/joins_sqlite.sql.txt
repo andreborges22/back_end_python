@@ -1,0 +1,62 @@
+/* =========================================================
+   ARQUIVO ÚNICO – JOINs em SQLite
+   Cenário: Escola (Alunos, Cursos e Matrículas)
+   ========================================================= */
+
+
+/* =========================
+   LIMPEZA (opcional)
+   ========================= */
+DROP TABLE IF EXISTS matricula;
+DROP TABLE IF EXISTS aluno;
+DROP TABLE IF EXISTS curso;
+
+
+/* =========================
+   CRIAÇÃO DAS TABELAS
+   ========================= */
+CREATE TABLE aluno (
+    id_aluno INTEGER PRIMARY KEY,
+    nome TEXT,
+    email TEXT
+);
+
+CREATE TABLE curso (
+    id_curso INTEGER PRIMARY KEY,
+    nome TEXT,
+    carga_horaria INTEGER
+);
+
+CREATE TABLE matricula (
+    id_matricula INTEGER PRIMARY KEY,
+    id_aluno INTEGER,
+    id_curso INTEGER,
+    data_matricula DATE,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
+    FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
+);
+
+
+/* =========================
+   INSERÇÃO DE DADOS
+   ========================= */
+
+/* Alunos */
+INSERT INTO aluno VALUES
+(1, 'Ana Silva', 'ana@email.com'),
+(2, 'Bruno Costa', 'bruno@email.com'),
+(3, 'Carlos Lima', 'carlos@email.com'),
+(4, 'Daniela Rocha', 'daniela@email.com');
+
+/* Cursos */
+INSERT INTO curso VALUES
+(1, 'Banco de Dados', 60),
+(2, 'Programação em Python', 80),
+(3, 'Redes de Computadores', 40);
+
+/* Matrículas */
+INSERT INTO matricula VALUES
+(1, 1, 1, '2025-01-10'),
+(2, 1, 2, '2025-01-12'),
+(3, 2, 2, '2025-01-15'),
+(4, 3, 1, '2025-01-20');
