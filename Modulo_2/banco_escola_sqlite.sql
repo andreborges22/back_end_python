@@ -20,6 +20,13 @@ CREATE TABLE IF NOT EXISTS `Aluno` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+DROP TABLE IF EXISTS Professor;	
+CREATE TABLE IF NOT EXISTS `Professor` (
+  `id_professor` INTEGER AUTO INCREMENT not null,
+  `nome` VARCHAR(100) NULL,
+  `formacao` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_professor`))
+
 -- Tabela: Contrato
 DROP TABLE IF EXISTS Contrato;
 CREATE TABLE IF NOT EXISTS `Contrato` (
