@@ -1,0 +1,14 @@
+from funcionario import Funcionario
+class Vendedor(Funcionario):
+    def __init__(self, nome, salario, comissao):
+        # Chama o construtor da classe pai (Funcionario) para inicializar
+        # os atributos herdados (nome, salario base).
+        super().__init__(nome, salario) 
+        self.__comissao = comissao
+
+    def calcularPagamento(self):
+        self.salario = self.__comissao
+        return self.salario
+    
+    def exibirInformacoes(self):
+        print(f"Vendedor: {self.nome} - Salário: R${self.calcularPagamento()}")

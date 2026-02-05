@@ -1,0 +1,38 @@
+/* ============================================================
+   3. EXERCÍCIOS – SUBCONSULTAS
+   ============================================================ */
+
+-- EXERCÍCIO 1 (Escalar)
+-- Liste todos os alunos e mostre, ao lado do nome,
+-- o total de cursos cadastrados.
+
+-- EXERCÍCIO 2 (Escalar)
+-- Liste os cursos cuja carga horária é maior que a média
+-- das cargas horárias dos cursos.
+
+-- EXERCÍCIO 3 (Escalar)
+-- Exiba os alunos matriculados em cursos com a maior
+-- carga horária do banco.
+
+-- EXERCÍCIO 4 (Linha)
+-- Encontre o curso que possui o mesmo nome e carga horária
+-- do curso "Banco de Dados".
+
+-- EXERCÍCIO 5 (Linha)
+-- Liste os dados da matrícula mais recente.
+
+-- EXERCÍCIO 6 (Tabela)
+-- Liste os alunos matriculados em mais de um curso.
+
+-- EXERCÍCIO 7 (Tabela)
+-- Liste os cursos que possuem alunos matriculados.
+
+-- EXERCÍCIO 8 (Tabela)
+-- Liste os alunos que não estão matriculados em nenhum curso.
+
+-- EXERCÍCIO 9 (Tabela)
+-- Exiba os alunos matriculados em cursos com carga horária
+-- maior que 60 horas.
+
+-- EXERCÍCIO 10 (Tabela / Desafio)
+-- Liste os cursos que não possuem nenhum aluno matriculado.

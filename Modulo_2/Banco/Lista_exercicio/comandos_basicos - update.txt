@@ -1,0 +1,67 @@
+📘 Exercícios
+1. Atualização simples
+
+Atualize o nome do cliente com id_cliente = 1 para “Ana P. Ferreira”.
+
+Altere a idade do cliente “Carlos Eduardo Silva” para 35 anos.
+
+Modifique o email da cliente “Beatriz Santos” para:
+beatriz.santos@novoemail.com.
+
+2. Atualização por condição
+
+Atualize o estado de todos os clientes que moram em São Paulo para “SP” (mesmo que já esteja correto).
+
+Atualize a cidade de todos os clientes do estado “MG” para “Belo Horizonte”.
+
+Aumente a idade em 1 ano para todos os clientes do sexo F.
+
+3. Atualizações com múltiplos campos
+
+Atualize telefone e email do cliente com id = 6.
+
+Para o cliente “Julia Andrade”, modifique cidade, estado e CEP para:
+
+Cidade: “São Paulo”
+
+Estado: “SP”
+
+CEP: “04500-000”
+
+4. UPDATE com filtros complexos
+
+Atualize o campo endereco dos clientes cuja cidade contenha “Rua” no endereço para adicionar “(Atualizado)” no final.
+
+Para todos os clientes com idade acima de 30 anos, acrescente “ - VIP” ao final do nome.
+
+Atualize o estado para “RJ” de todos os clientes cujo CEP comece com “220”.
+
+5. Atualização usando intervalo de valores
+
+Para clientes com idade entre 25 e 30 anos, altere o telefone para começar com o DDD “119”.
+
+Modifique o CEP de todos os clientes cadastrados antes de 2025-03-01 para “99999-999”.
+
+6. Atualização “tipo manutenção”
+
+Atualize todos os CEPs removendo o hífen (ex: “04567-900” → “04567900”).
+(Exercício prático de funções de string)
+
+Transforme todos os nomes para UPPERCASE.
+
+7. Atualizações desafiadoras (nível avançado)
+
+Atualize a idade de todos os clientes para idade + 5, mas somente se o cliente morar em um estado da região Sudeste (SP, RJ, MG).
+
+Acrescente o texto “ – Verificar email” ao nome de todos os clientes cujo email não termina com “.com”.
+
+Atualize o endereço dos clientes cujo telefone tenha um DDD diferente do estado correto. (Ex.: SP = 11, RJ = 21 etc.)
+(Além do UPDATE, esse exercício exige análise manual antes de executar.)
+
+8. Atualizações que exigem subconsulta (avançado)
+
+(Simulam cenários reais)
+
+Atualize a idade do cliente que tem o menor id_cliente para 99.
+
+Modifique o nome do cliente mais recentemente cadastrado acrescentando “(NOVO)”.

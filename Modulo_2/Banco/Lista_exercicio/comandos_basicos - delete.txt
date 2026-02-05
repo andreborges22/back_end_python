@@ -1,0 +1,48 @@
+🗑️ EXERCÍCIOS DE DELETE — Tabela cliente
+1. Delete básico
+
+Apague o cliente cujo id_cliente = 7.
+
+Exclua o cliente chamado "João Batista".
+
+Apague o cliente cujo email é 'carlossilva@email.com'.
+
+2. Delete por condição
+
+Exclua todos os clientes da cidade de Curitiba.
+
+Delete todos os clientes do estado RJ.
+
+Apague todos os clientes com idade maior que 35 anos.
+
+3. Delete usando LIKE
+
+Apague todos os clientes cujos nomes começam com a letra “A”.
+
+Delete todos os clientes cujo telefone começa com DDD 41.
+
+Apague todos os clientes cujo email termina com “@email.com”.
+
+4. Delete com múltiplas condições
+
+Apague todos os clientes do sexo M que moram em São Paulo.
+
+Delete clientes que possuem idade entre 20 e 30 anos.
+
+Exclua clientes cujo endereço contenha a palavra “Av.”.
+
+5. Exercícios com DELETE e segurança
+
+Exclua todos os clientes cujo CEP seja inválido (CEP com menos de 8 caracteres).
+
+Delete todos os clientes cadastrados antes de 2025-02-01.
+
+Exclua clientes cujo estado não seja SP, RJ, MG, PR, RS ou DF (estados válidos da tabela).
+
+6. Delete avançado (subconsultas)
+
+Apague o cliente com a maior idade registrada.
+
+Delete o cliente mais recentemente cadastrado.
+
+Exclua todos os clientes cujo id_cliente seja maior que a média de id_cliente da tabela.

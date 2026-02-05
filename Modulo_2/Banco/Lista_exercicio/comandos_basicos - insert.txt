@@ -1,0 +1,140 @@
+📝 EXERCÍCIOS DE INSERT (com níveis variados)
+1️⃣ Inserir um cliente completo
+
+Insira um cliente:
+
+id_cliente: ultimo+1
+
+nome: Marcos Silva
+
+idade: 32
+
+sexo: 'M'
+
+email: marcos.silva@email.com
+
+telefone: (71)99999-1111
+
+endereço: Rua A, 123
+
+cidade: Salvador
+
+estado: BA
+
+cep: 40000-000
+
+data_cadastro: 2025-01-10
+
+2️⃣ Inserir cliente sem informar campos opcionais
+
+Insira:
+
+id_cliente: ultimo+1
+
+nome: Ana Souza
+
+idade: 28
+
+Os campos email, telefone e endereco devem ficar NULL.
+
+cidade: Recife
+
+estado: PE
+
+data_cadastro: 2025-01-15
+
+3️⃣ Inserir vários clientes de uma só vez
+
+Insira:
+
+id	nome	idade	sexo	email	cidade	estado	data_cadastro
+ultimo+1	Paulo Ramos	40	M	paulo@gmail.com
+	Rio de Janeiro	RJ	2025-01-20
+ultimo+1	Beatriz Santos	22	F	bia22@hotmail.com
+	Belo Horizonte	MG	2025-01-22
+ultimo+1	Juliana Torres	35	F	julianatorres@gmail.com
+	Curitiba	PR	2025-01-25
+
+Obs: os campos não citados devem ficar NULL.
+
+4️⃣ Inserir cliente sem informar idade
+
+Insira:
+
+id_cliente: ultimo+1
+
+nome: Carlos Mendes
+
+sexo: 'M'
+
+cidade: Fortaleza
+
+estado: CE
+
+data_cadastro: 2025-02-01
+
+Deixe idade = NULL.
+
+5️⃣ Inserir cliente com CEP e endereço completo
+
+Insira:
+
+id_cliente: ultimo+1
+
+nome: Fernanda Lima
+
+idade: 29
+
+sexo: F
+
+endereco: Av. das Flores, 890
+
+cidade: Manaus
+
+estado: AM
+
+cep: 69000-200
+
+data_cadastro: 2025-02-05
+
+6️⃣ Inserir múltiplos clientes usando valores padrão
+
+Insira três clientes listados abaixo, deixando idade, telefone, email e cep como NULL.
+
+id	nome	sexo	cidade	estado	data_cadastro
+ultimo+1	Roberto Alves	M	Goiânia	GO	2025-02-10
+ultimo+1	Patrícia Oliveira	F	Vitória	ES	2025-02-11
+ultimo+1	João Lucas	M	São Luís	MA	2025-02-12
+7️⃣ Inserir cliente com e-mail e telefone usando padrão internacional
+
+Insira:
+
+id_cliente: ultimo+1
+
+nome: Lara Costa
+
+idade: 26
+
+sexo: F
+
+email: lara.costa@empresa.com
+
+telefone: +55 11 98888-7777
+
+cidade: São Paulo
+
+estado: SP
+
+data_cadastro: 2025-02-15
+
+8️⃣ Inserir cliente usando INSERT com SELECT
+
+Crie um novo cliente copiando apenas nome, cidade e estado de outro cliente existente:
+
+Copie o cliente com id_cliente = 1
+
+Novo id_cliente: ultimo+1
+
+data_cadastro: 2025-02-18
+
+Campos idade, sexo, email, telefone, endereco e cep devem ficar NULL

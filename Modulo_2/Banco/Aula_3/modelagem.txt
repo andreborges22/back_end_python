@@ -1,0 +1,85 @@
+🟦 Exercício 1 – Escola
+
+Uma escola deseja armazenar informações sobre alunos e turmas.
+
+Cada aluno pertence a uma única turma
+
+Uma turma pode ter vários alunos
+
+Regras:
+
+Aluno: código, nome
+
+Turma: código, nome
+
+👉 Tarefa:
+Modele as entidades e o relacionamento entre elas.
+
+🟦 Exercício 2 – Biblioteca
+
+Uma biblioteca deseja controlar livros e autores.
+
+Um autor pode escrever vários livros
+
+Um livro pode ter mais de um autor
+
+Regras:
+
+Autor: código, nome
+
+Livro: código, título
+
+👉 Tarefa:
+Modele o DER indicando corretamente o relacionamento.
+
+🟦 Exercício 3 – Loja
+
+Uma loja deseja registrar clientes e pedidos.
+
+Um cliente pode fazer vários pedidos
+
+Um pedido pertence a apenas um cliente
+
+Regras:
+
+Cliente: código, nome
+
+Pedido: número, data
+
+👉 Tarefa:
+Crie o modelo conceitual com entidades, atributos e relacionamento.
+
+📝 Texto 1 – Escola
+
+Uma escola deseja organizar informações sobre alunos, turmas e professores.
+
+Cada aluno possui um código e um nome.
+Cada turma possui um código e um nome.
+Cada professor possui um código e um nome.
+
+Cada aluno está matriculado em apenas uma turma.
+Uma turma pode ter vários alunos.
+
+Cada turma é ministrada por um professor, e um professor pode ministrar várias turmas.
+
+📝 Texto 2 – Loja
+
+Uma loja deseja controlar clientes, pedidos e produtos.
+
+Cada cliente possui um código e um nome.
+Cada pedido possui um número e uma data.
+Cada produto possui um código e uma descrição.
+
+Um cliente pode realizar vários pedidos, mas cada pedido pertence a um único cliente.
+Um pedido pode conter vários produtos, e um produto pode estar presente em vários pedidos.
+
+📝 Texto 3 – Biblioteca
+
+Uma biblioteca deseja armazenar informações sobre livros, autores e editoras.
+
+Cada autor possui um código e um nome.
+Cada livro possui um código e um título.
+Cada editora possui um código e um nome.
+
+Um autor pode escrever vários livros, e um livro pode ter mais de um autor.
+Cada livro é publicado por uma única editora, e uma editora pode publicar vários livros.
