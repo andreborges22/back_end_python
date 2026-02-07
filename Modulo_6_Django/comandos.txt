@@ -1,0 +1,26 @@
+criar VM
+python -m venv meu_projeto
+
+ativar VM
+scripts/activate
+
+instalar django
+pip install django
+
+criar projeto
+django-admin startproject app .
+
+comando para rodar o servidor
+python manage.py runserver
+
+aplica as migrações do Django no banco de dados
+python manage.py migrate
+
+comando para criar superusuario
+python manage.py createsuperuser
+
+criar app
+python manage.py startapp nomedoap
+
+
+
