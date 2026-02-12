@@ -9,12 +9,16 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Cadastro de Aluno</h1>
+    <hr>
+    <h1>Alunos Cadastrados</h1>
     <form>
-        <input name > 
+        {% for aluno in alunos %}
+            <li>{{aluno.id}} - {{aluno.nome}}</li>
+        {% endfor %}
     </form>
     <hr>
     <ul>
     </ul>    
 </body>
+</html>
 </html>
