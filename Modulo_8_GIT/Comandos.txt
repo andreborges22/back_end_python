@@ -45,3 +45,5 @@ cria uma nova branch (git checkout -b "teste")
 faz as modificações
 faz o push para a nova branch (git push origin teste)
 Depois vai ni GitHub e procura a opção contribuir
+
+https://youtu.be/Kyw91mqCHD0?si=1a46HbDb2Jf8LeRE
