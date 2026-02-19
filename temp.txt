@@ -1,5 +1,49 @@
-        {% for aluno in alunos %}
-            <li>
-                {{ aluno.id }} - {{ aluno.nome }}
-            </li>
-        {% endfor %}
+git init
+Inicia repositório 
+
+git status
+Verifica status
+
+git add .
+Adiciona arquivos no stage
+
+git commit -m ""
+Grava alterações no stage
+
+git push
+Enviar alterações para repositório remoto
+
+git log
+Ver o histórico
+
+git checkout ID
+navegar entre versões
+
+git log --all
+ver todas as versões
+
+git checkou master
+Navega até branch principal
+
+gti checkout -b "nome_da_branch"
+cria uma nova branch
+
+git checkout "nome_da_branch"
+Muda para a branch
+
+git branch
+Mostra as branchs
+
+git merge nome_da_branch
+mescla a branch atual com a somar
+
+git remote add origin URL
+conectar o repositório local ao repositório remoto
+
+git push -u origin master
+Tornar a branch master como padrão
+
+git clone URL
+baixa os arquivos da nuvem para o repositório local
+
+https://youtu.be/Kyw91mqCHD0?si=1a46HbDb2Jf8LeRE
