@@ -1,5 +1,5 @@
 git init
-Inicia repositorio
+Inicia repositório 
 
 git status
 Verifica status
@@ -22,11 +22,11 @@ navegar entre versões
 git log --all
 ver todas as versões
 
-git checkout master
+git checkou master
 Navega até branch principal
 
-git checkout -b "nome_da_branch"
-cria e muda para a nova branch
+gti checkout -b "nome_da_branch"
+cria uma nova branch
 
 git checkout "nome_da_branch"
 Muda para a branch
@@ -35,7 +35,16 @@ git branch
 Mostra as branchs
 
 git merge nome_da_branch
-mescla a branch atual com a branch indicada
+mescla a branch atual com a somar
+
+git remote add origin URL
+conectar o repositório local ao repositório remoto
+
+git push -u origin master
+Tornar a branch master como padrão
+
+git clone URL
+baixa os arquivos da nuvem para o repositório local
 
 TRABALHANDO EM EQUIPE
 
@@ -44,6 +53,15 @@ usa o git clone para baixar os arquivos para o repositório local
 cria uma nova branch (git checkout -b "teste")
 faz as modificações
 faz o push para a nova branch (git push origin teste)
-Depois vai ni GitHub e procura a opção contribuir
+Depois vai no GitHub e procura a opção contribuir
 
+Vídeo 
 https://youtu.be/Kyw91mqCHD0?si=1a46HbDb2Jf8LeRE
+
+Repositório Institucional
+https://github.com/backend-python-cepedi/turma1
+
+Confirmar merge no VIM
+ESC
+:wq
+ENTER
