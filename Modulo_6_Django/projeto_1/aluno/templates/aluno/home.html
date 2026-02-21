@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Módulo de Alunos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <h1>Alunos</h1>
+      <form action="{% url 'cadastrar_aluno' %}" method="post" class="form-control">  
+                {% csrf_token %}                 
+                <label>Nome</label>
+                <br>
+                <input type="text" name="nome" placeholder="Digite seu nome" required="true">                
+                <br>
+                <label>Email</label>
+                <br>
+                <input type="email" name="email" placeholder="Digite seu email" required="true">
+                <br>
+                <label>Data de Nascimento</label>
+                <br>
+                <input type="date" name="nascimento" value="{{aluno.nascimento}}" required="false">
+                <br>
+                <hr>
+                <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
+            </form>
+  </body>
+</html>
