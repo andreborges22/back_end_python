@@ -1,13 +1,13 @@
 # importa a biblioteca requests (pip install requests)
 import requests
+import pprint
 
 # metodo para consumir uma API
 
 
-def fetch_data(endpoint):
+def fetch_data(link_api, endpoint):
     # criando uma requisicao que consume uma api
-    response = requests.get(f"https://rickandmortyapi.com/api/{endpoint}")
-
+    response = requests.get(f"{link_api}{endpoint}")
     # se a resposta for ok
     if response.status_code == 200:
         # recupera os dados no formato json
@@ -18,11 +18,15 @@ def fetch_data(endpoint):
 
 
 # passando o dado para a api
-dados = fetch_data("character")
+link_api = "https://rickandmortyapi.com/api/"
+personagem = input("Informe o numero do personagem")
+endpoint = f"character/{personagem}"
+dados = fetch_data(link_api, endpoint)
 # se existrem dados
 if dados:
     # imprima
-    print(dados)
+    pprint.pprint(dados)
+    print(f"Nome: {dados["name"]}")
 else:
     # informe erro
     print("Falha ao recuperar dados")
