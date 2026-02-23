@@ -1,18 +1,3 @@
-import requests,pprint
-
-
-def retornaDados(cep):
-    response = requests.get(f"https://viacep.com.br/ws/{cep}/json/")   
-    if response.status_code==200:
-        return response.json
-    else:
-        return None
-    
-cep = "41213000"
-dados = retornaDados(cep)
-pprint.pprint(dados)
-
-
 # importa a biblioteca requests (pip install requests)
 import requests
 import pprint
@@ -33,7 +18,7 @@ def retorna_dados(endpoint):
 
 
 # passando o dado para a api
-cep = input("Informe um CEP no formato 00000000")
+cep = input("Informe um CEP no formato 00000000: ")
 dados = retorna_dados(cep)
 # se existrem dados
 if dados:
