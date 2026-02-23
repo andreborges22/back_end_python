@@ -1,19 +1,30 @@
+cria uma local
+mkdir noma_da_pasta
+
+navega até a pasta com cd noma_da_pasta
+cd noma_da_pasta
+
 criar VM
 python -m venv meu_projeto
 
 ativar VM
 scripts/activate
 
+Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 instalar django
 pip install django
 
 criar projeto
-django-admin startproject app .
+django-admin startproject projeto1 .
 
 comando para rodar o servidor
 python manage.py runserver
 
-aplica as migrações do Django no banco de dados
+detecta alterações nos modelos
+python manage.py makemigrations
+
+aplica as migrações no banco de dados
 python manage.py migrate
 
 comando para criar superusuario
@@ -23,4 +34,12 @@ criar app
 python manage.py startapp nomedoap
 
 
+Vídeo
+https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
 
+Bootstrap
+https://getbootstrap.com/
+
+Documentação django
+	Models
+		https://docs.djangoproject.com/en/6.0/topics/db/models/

@@ -4,7 +4,8 @@ from .models import Aluno
 
 # Create your views here.
 def home(request):
-    return render(request, 'aluno/home.html')
+    alunos = Aluno.objects.all()
+    return render(request, 'aluno/home.html',{"alunos": alunos})
 
 def cadastrar_aluno(request):
     nome = request.POST.get("nome")

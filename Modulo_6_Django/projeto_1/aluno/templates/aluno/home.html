@@ -25,6 +25,10 @@
                 <br>
                 <hr>
                 <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
-            </form>
+      </form>
+      <h1>Alunos Cadastrados</h1>  
+        {% for aluno in alunos %}
+          {{ aluno.nome }}
+        {% endfor %}    
   </body>
 </html>
