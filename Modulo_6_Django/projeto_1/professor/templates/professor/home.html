@@ -6,6 +6,11 @@
     <title>Módulo de Professores</title>
   </head>
   <body>
+    {% for message in messages %}
+            <div class = "alert alert-primary" role="alert">                    
+                {{ message }}
+            </div>                
+      {% endfor %}
     <h1>Professores</h1>
     <form>
     </form>

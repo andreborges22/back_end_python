@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+<body>
+    {% for message in messages %}
+        <div class = "alert alert-primary" role="alert">                    
+            {{ message }}
+        </div>                
+    {% endfor %}
+    <h1>Editar Aluno ({{aluno.id}} - {{aluno.nome}})</h1>
+    <hr>
+    <form action="{% url 'update' aluno.id %}" method="POST"class="form-control">
+        {% csrf_token %}
+        <label>Nome</label>
+        <br>
+        <input type="text" name="nome" value="{{aluno.nome}}"placeholder="Digite o novo nome" required="true">
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" name="email" value="{{aluno.email}}"placeholder="Digite o novo email" required="true">
+        <br>
+        <label>Data de Nascimento</label>
+        <br>
+        <input type="date" name="nascimento" value="{{aluno.nascimento|date:'Y-m-d'}}" required="false">
+        <br>
+        <hr>
+        <button type="submit"class="btn btn-success">update</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
+    {% for message in messages %}
+            <div class = "alert alert-primary" role="alert">                    
+                {{ message }}
+            </div>                
+      {% endfor %}
     <li><a href="{% url 'home' %}">Home</a></li>
     <h1>Alunos</h1>
       <form action="{% url 'cadastrar_aluno' %}" method="post" class="form-control">  
@@ -25,24 +30,63 @@
                 <br>                
                 <label>CEP</label>
                 <br>
-                <input type="text" id="cep" name="cep" placeholder="Informe um CEP válido" required="true">
+                <input type="text" id="cep" name="cep" placeholder="Informe um CEP sem ponto nem traço (ex. 41213000)" required="true">
                                             
                 <button type="button" onclick="buscarCep()" class="btn btn-success">
                     Localizar bairro
                 </button> 
         
                 <br>
+                <label>Logradouro</label>
+                <br>
+                <input type="text" id="logradouro" name="logradouro" required>                
+                <br>    
+                <label>Número</label>
+                <br>
+                <input type="text" id="logradouro" name="logradouro" required>                
+                <br>    
                 <label>Bairro</label>
                 <br>
-                <input type="text" id="bairro" name="bairro" required>
+                <input type="text" id="bairro" name="bairro" required> 
+                <br>    
+                <label>cidade</label>
+                <br>
+                <input type="text" id="cidade" name="cidade" required>
+                <br>
+                <label>Estado</label>
+                <br>
+                <input type="text" id="estado" name="estado" required>
                 <br>               
                 <hr>
                 <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
       </form>
       <h1>Alunos Cadastrados</h1>  
-        {% for aluno in alunos %}
-          {{ aluno.nome }}
-        {% endfor %}            
+       <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>      
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Apagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>      
+                    {% for aluno in alunos %}
+                        <tr> 
+                            <td>{{ aluno.id }}</td>
+                            <td>{{ aluno.nome }}</td>
+                            <td>{{ aluno.email }}</td>
+                            <td>{{ aluno.nascimento }}</td>
+                            <td><a href="{% url  'editar' aluno.id %}"><button class="btn btn-link">Editar</button></a></td>
+                            <td><a href="{% url  'deletar_aluno' aluno.id %}"><button class="btn btn-danger">Deletar</button></a></td>
+                        </tr>
+                    {% endfor %}  
+                </tr>
+            </tbody>
+        </table>           
           <script>
             function buscarCep() {
                 let cep = document.getElementById("cep").value;
@@ -50,7 +94,17 @@
                 fetch(`https://viacep.com.br/ws/${cep}/json/`)
                     .then(response => response.json())
                     .then(data => {
-                        document.getElementById("bairro").value = data.bairro;
+                    if (data.erro) {
+                        alert("CEP não encontrado! Verifique o CEp digitado e tente novamente");
+                        document.getElementById("bairro").value = "";
+                        return;
+                    }
+
+                    document.getElementById("bairro").value = data.bairro || "";
+                    document.getElementById("logradouro").value = data.logradouro || "";
+                    document.getElementById("cidade").value = data.localidade || "";
+                    document.getElementById("bairro").value = data.bairro || "";
+                    document.getElementById("estado").value = data.estado || "";
 
                     })
                     .catch(error => console.error("Erro:", error));
