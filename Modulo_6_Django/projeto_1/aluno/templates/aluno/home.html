@@ -21,14 +21,41 @@
                 <br>
                 <label>Data de Nascimento</label>
                 <br>
-                <input type="date" name="nascimento" value="{{aluno.nascimento}}" required="false">
+                <input type="date" name="nascimento" value="{{aluno.nascimento}}" required="true">
+                <br>                
+                <label>CEP</label>
                 <br>
+                <input type="text" id="cep" name="cep" placeholder="Informe um CEP válido" required="true">
+                                            
+                <button type="button" onclick="buscarCep()" class="btn btn-success">
+                    Localizar bairro
+                </button> 
+        
+                <br>
+                <label>Bairro</label>
+                <br>
+                <input type="text" id="bairro" name="bairro" required>
+                <br>               
                 <hr>
                 <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
       </form>
       <h1>Alunos Cadastrados</h1>  
         {% for aluno in alunos %}
           {{ aluno.nome }}
-        {% endfor %}    
+        {% endfor %}            
+          <script>
+            function buscarCep() {
+                let cep = document.getElementById("cep").value;
+
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("bairro").value = data.bairro;
+
+                    })
+                    .catch(error => console.error("Erro:", error));
+              }
+        </script>
+
   </body>
 </html>
