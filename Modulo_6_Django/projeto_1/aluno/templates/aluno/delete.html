@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Módulo Aluno - SISIFBA{{ block.super }}{% endblock %}
+{% block content%}
 {{pessoa.id}}-{{pessoa.nome}}
     <form action="{% url 'delete' aluno.id %}" method="POST">
         {% csrf_token %}
@@ -13,4 +8,4 @@
         <button type="submit">deletar</button>
     </form>
 </body>
-</html>
+{% endblock %}

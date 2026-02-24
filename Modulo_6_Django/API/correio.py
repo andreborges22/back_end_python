@@ -5,9 +5,9 @@ import pprint
 # metodo para consumir uma API
 
 
-def retorna_dados(endpoint):
+def retorna_dados(cep):
     # criando uma requisicao que consume uma api
-    response = requests.get(f"https://viacep.com.br/ws/{endpoint}/json/")
+    response = requests.get(f"https://viacep.com.br/ws/{cepk}/json/")
     # se a resposta for ok
     if response.status_code == 200:
         # recupera os dados no formato json

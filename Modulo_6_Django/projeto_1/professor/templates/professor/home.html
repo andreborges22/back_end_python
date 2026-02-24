@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Módulo de Professores</title>
-  </head>
+{% extends 'base.html' %}
+{% block title %}Módulo Professor - SISIFBA{{ block.super }}{% endblock %}
+{% block content %}
   <body>
     {% for message in messages %}
             <div class = "alert alert-primary" role="alert">                    
@@ -16,3 +12,4 @@
     </form>
   </body>
 </html>
+{% endblock %}
