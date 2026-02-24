@@ -14,7 +14,7 @@
       {% endfor %}
     <li><a href="{% url 'home' %}">Home</a></li>
     <h1>Alunos</h1>
-      <form action="{% url 'cadastrar_aluno' %}" method="post" class="form-control">  
+      <form action="{% url 'cadastrar' %}" method="post" class="form-control">  
                 {% csrf_token %}                 
                 <label>Nome</label>
                 <br>
@@ -81,7 +81,7 @@
                             <td>{{ aluno.email }}</td>
                             <td>{{ aluno.nascimento }}</td>
                             <td><a href="{% url  'editar' aluno.id %}"><button class="btn btn-link">Editar</button></a></td>
-                            <td><a href="{% url  'deletar_aluno' aluno.id %}"><button class="btn btn-danger">Deletar</button></a></td>
+                            <td><a href="{% url  'deletar' aluno.id %}"><button class="btn btn-danger">Deletar</button></a></td>
                         </tr>
                     {% endfor %}  
                 </tr>
