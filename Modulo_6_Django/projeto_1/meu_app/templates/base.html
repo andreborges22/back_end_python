@@ -18,7 +18,11 @@
 </nav>
 
 <hr>
-
+{% for message in messages %}
+  <div class = "alert alert-primary" role="alert">                    
+      {{ message }}
+  </div>                
+{% endfor %}
 {% block content %}
 {% endblock %}
 

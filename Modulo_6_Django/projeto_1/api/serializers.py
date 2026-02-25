@@ -4,4 +4,4 @@ from aluno.models import Aluno
 class AlunoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aluno
-        fields = ('id', 'nome', 'email')
+        fields = "__all__"

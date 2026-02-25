@@ -11,13 +11,27 @@ def home(request):
 
 
 def cadastrar_aluno(request):
-    nome = request.POST.get("nome")
-    # print(request.POST)
-    email = request.POST.get("email")
-    # print(request.POST)
-    nascimento = request.POST.get("nascimento")
-    # print(request.POST)
-    Aluno.objects.create(nome=nome, email=email, nascimento=nascimento)
+    nome = request.POST.get("nome")    
+    email = request.POST.get("email")    
+    nascimento = request.POST.get("nascimento")    
+    cep = request.POST.get("cep")
+    bairro = request.POST.get("bairro")
+    logradouro = request.POST.get("logradouro")
+    numero = request.POST.get("numero")    
+    cidade = request.POST.get("localidade")
+    print(f"cidade:{cidade}")
+    estado = request.POST.get("estado")
+    Aluno.objects.create(
+        nome=nome, 
+        email=email, 
+        nascimento=nascimento, 
+        cep=cep, 
+        bairro=bairro,
+        logradouro = logradouro,
+        numero = numero,
+        cidade = cidade,
+        estado = estado
+        )
     messages.success(request, f"Estudante {nome} cadastrado(a) com sucesso!")
     return redirect(home)
 
@@ -28,13 +42,25 @@ def editar(request, id):
 
 
 def update(request, id):
-    nome = request.POST.get("nome")
-    email = request.POST.get("email")
-    nascimento = request.POST.get("nascimento")
+    nome = request.POST.get("nome")    
+    email = request.POST.get("email")    
+    nascimento = request.POST.get("nascimento")    
+    cep = request.POST.get("cep")
+    bairro = request.POST.get("bairro")
+    logradouro = request.POST.get("logradouro")
+    numero = request.POST.get("numero")
+    cidade = request.POST.get("localidade")
+    estado = request.POST.get("estado")
     aluno = Aluno.objects.get(id=id)
     aluno.nome = nome
     aluno.email = email
     aluno.nascimento = nascimento
+    aluno.cep = cep
+    aluno.bairro=bairro
+    aluno.logradouro=logradouro
+    aluno.numero = numero
+    aluno.cidade = cidade
+    aluno.estado = estado
     aluno.save()
     messages.success(request, f"Estudante {nome} editado(a) com sucesso!")
     return redirect(home)
