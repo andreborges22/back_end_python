@@ -1,4 +1,5 @@
 from django.db import models
+from curso.models import Curso
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Aluno(models.Model):
     logradouro = models.CharField(max_length=100, default="")
     numero = models.CharField(max_length=10, default="")
     cidade = models.CharField(max_length=100, default="")
-    estado = models.CharField(max_length=2, default="")    
+    estado = models.CharField(max_length=2, default="")  
+    curso = models.ForeignKey(Curso,default=1, on_delete= models.PROTECT)  
 
     def __str__(self):
         return self.nome
