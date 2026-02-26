@@ -23,6 +23,9 @@
       {{ message }}
   </div>                
 {% endfor %}
+{% if erro %}
+    <p style="color:red">{{ erro }}</p>
+{% endif %}
 {% block content %}
 {% endblock %}
 

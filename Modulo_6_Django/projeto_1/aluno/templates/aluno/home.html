@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Módulo Aluno - SISIFBA{{ block.super }}{% endblock %}
 {% block content%}
- 
-<h1>Cadastrar Alunos</h1>
-      <form action="{% url 'cadastrar' %}" method="post" class="form-control">  
+
+<h1>Cadastrar Alunos</h1>    
+        <form action="{% url 'cadastrar' %}" method="post" class="form-control">  
                 {% csrf_token %}                 
                 <label>Nome</label>
                 <br>
@@ -45,18 +46,29 @@
                 <label>Estado</label>
                 <br>
                 <input type="text" id="estado" name="estado" required>
-                <br>               
+                <br>
+                <label>Curso</label>
+                <br>
+                <select id="curso" name="curso" required>
+                <option value="">Selecione um curso</option>
+                    {% for curso in cursos %}
+                        <option value="{{ curso.id }}">
+                            {{ curso.nome }}
+                        </option>
+                    {% endfor %}
+                </select>               
                 <hr>
                 <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
-      </form>
-      <h1>Alunos Cadastrados</h1>  
-       <table class="table">
+        </form>
+        <h1>Alunos Cadastrados</h1>  
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>      
                     <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Curso</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Apagar</th>
                 </tr>
@@ -69,36 +81,13 @@
                             <td>{{ aluno.nome }}</td>
                             <td>{{ aluno.email }}</td>
                             <td>{{ aluno.nascimento }}</td>
+                            <td>{{ aluno.curso }}</td>
                             <td><a href="{% url  'editar' aluno.id %}"><button class="btn btn-link">Editar</button></a></td>
                             <td><a href="{% url  'deletar' aluno.id %}"><button class="btn btn-danger">Deletar</button></a></td>
                         </tr>
                     {% endfor %}  
                 </tr>
             </tbody>
-        </table>           
-          <script>
-            function buscarCep() {
-                let cep = document.getElementById("cep").value;
-
-                fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                    .then(response => response.json())
-                    .then(data => {
-                    if (data.erro) {
-                        alert("CEP não encontrado! Verifique o CEp digitado e tente novamente");
-                        document.getElementById("bairro").value = "";
-                        return;
-                    }
-
-                    document.getElementById("bairro").value = data.bairro || "";
-                    document.getElementById("logradouro").value = data.logradouro || "";
-                    document.getElementById("localidade").value = data.localidade || "";
-                    document.getElementById("bairro").value = data.bairro || "";
-                    document.getElementById("estado").value = data.estado || "";
-
-                    })
-                    .catch(error => console.error("Erro:", error));
-              }
-        </script>
-
-  </body>
+        </table>       
+        <script src="{% static 'js/funcoes.js' %}"></script>                
 {% endblock %}
