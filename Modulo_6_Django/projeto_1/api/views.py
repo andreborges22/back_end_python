@@ -6,3 +6,6 @@ from .serializers import AlunoSerializer
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
+
+#def home(request):
+    #return render(request,'curso/home.html')
