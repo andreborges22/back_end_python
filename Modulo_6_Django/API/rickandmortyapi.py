@@ -5,9 +5,9 @@ import pprint
 # metodo para consumir uma API
 
 
-def retorna_dados(link_api, endpoint):
+def retorna_dados(id):
     # criando uma requisicao que consume uma api
-    response = requests.get(f"{link_api}{endpoint}")
+    response = requests.get(f"https://rickandmortyapi.com/api/character/{id}")
     # se a resposta for ok
     if response.status_code == 200:
         # recupera os dados no formato json
@@ -18,10 +18,9 @@ def retorna_dados(link_api, endpoint):
 
 
 # passando o dado para a api
-link_api = "https://rickandmortyapi.com/api/"
-personagem = input("Informe o numero do personagem: ")
-endpoint = f"character/{personagem}"
-dados = retorna_dados(link_api, endpoint)
+#link_api = "https://rickandmortyapi.com/api/"
+id = input("Informe o id do personagem: ")
+dados = retorna_dados(id)
 # se existrem dados
 if dados:
     # imprima

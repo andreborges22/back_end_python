@@ -17,11 +17,14 @@ response = requests.get(api_link,params=parametros)
 #print(response.content)
 if response.status_code==200:
     dados = response.json()
-pprint.pprint(dados)
-temperatura = dados["current"]["temp_c"]
-Indice_UV = dados["current"]["uv"]
-condicao = dados["current"]["condition"]["text"]
-
-print(f"Temperatura atual: {temperatura}")
-print(f"Indice_UV: {Indice_UV}")
-print(f"Condição do tempo: {condicao}")
+if dados:
+    #pprint.pprint(dados)
+    temperatura = dados["current"]["temp_c"]
+    Indice_UV = dados["current"]["uv"]
+    condicao = dados["current"]["condition"]["text"]
+    print(f"Temperatura atual: {temperatura}")
+    print(f"Indice_UV: {Indice_UV}")
+    print(f"Condição do tempo: {condicao}")
+else:
+     # informe erro
+    print("Falha ao recuperar dados")

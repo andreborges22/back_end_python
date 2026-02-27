@@ -23,8 +23,10 @@ dados = retorna_dados(cep)
 # se existrem dados
 if dados:
     # imprima
-    #pprint.pprint(dados)
-    print(f"Bairro: {dados["bairro"]}")
+    # pprint.pprint(dados)
+    print(f"Bairro: {dados['bairro']}")
+    print(f"Logradouro: {dados['logradouro']}")
+    print(f"Código IBGE: {dados['ibge']}")
 else:
     # informe erro
     print("Falha ao recuperar dados")
