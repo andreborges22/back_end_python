@@ -12,6 +12,8 @@ scripts/activate
 
 Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
+Com o ambiente virtual ativo:
+
 instalar django
 pip install django
 
@@ -33,13 +35,94 @@ python manage.py createsuperuser
 criar app
 python manage.py startapp nomedoap
 
+Material de apoio:
 
-Vídeo
-https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
+Confirmar merge no VIM
+ESC
+:wq
+ENTER
 
-Bootstrap
-https://getbootstrap.com/
+Vídeo sobre crud django
+	https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
+
+Vídeo sobre django framework
+	https://www.youtube.com/watch?v=gFsIGJR5R8I
+
+Bootstrap (ajuda em construção de páginas html)
+	https://getbootstrap.com/
+
+documentação DRF
+	https://www.django-rest-framework.org/#
 
 Documentação django
 	Models
 		https://docs.djangoproject.com/en/6.0/topics/db/models/
+
+codigo para dropdown no home aluno
+<select id="curso" name="curso">
+                <option value="">Selecione um curso</option>
+                    {% for curso in cursos %}
+                        <option value="{{ curso.id }}">
+                            {{ curso.nome }}
+                        </option>
+                    {% endfor %}
+                </select>  
+
+codigo para dropdown no update aluno
+<select id = "curso" name="curso">
+
+            <option value="">Selecione um curso</option>
+
+            {% for curso in cursos %}
+                <option value="{{ curso.id }}" {% if curso == aluno.curso %}selected{% endif %}>
+                    {{ curso.nome }}
+                </option>
+            {% endfor %}
+
+        </select>				
+
+codigo base.html
+{% for message in messages %}
+  <div class = "alert alert-primary" role="alert">                    
+      {{ message }}
+  </div>                
+{% endfor %}
+{% block content %}
+{% endblock %}        
+
+IMPLEMENTANDO API NO PROJETO
+instalar dependencias
+    https://www.django-rest-framework.org/#installation
+
+cria o app api
+implementa o serializers
+    from rest_framework import serializers
+    from aluno.models import Aluno
+
+    class AlunoSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Aluno
+            fields = "__all__"
+            # fields = ["id","nome"]
+
+e as viewsets
+
+    from rest_framework import viewsets
+    from aluno.models import Aluno
+    from .serializers import AlunoSerializer
+
+    # Create your views here.
+    class AlunoViewSet(viewsets.ModelViewSet):
+        queryset = Aluno.objects.all()
+        serializer_class = AlunoSerializer
+
+implementa a rota na urls.py do projeto principal apontando para sua viewset
+    from rest_framework import routers
+    router = routers.DefaultRouter()
+    router.register(r'alunos', AlunoViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+chamando a api na home
+<li> <a href="{% url 'aluno-list' %}">API Alunos</a></li>    
