@@ -1,3 +1,15 @@
+https://gamma.app/docs/Modulo-5-Aula-1-Conceitos-Fundamentais-de-WebServices-m60e2cnd59okwt4?authuser=0&mode=doc
+
+https://gamma.app/docs/Compreendendo-o-Framework-Django-e-sua-Arquitetura-7yoofn8g1qx4bwz?mode=doc
+
+https://gamma.app/docs/Fluxo-de-uma-Requisicao-no-Django-e9fowna1156a43e?mode=doc
+
+https://docs.google.com/presentation/d/169OEyS3EdaaSuNBMsspQK93WqWq0Ea4a/edit?slide=id.p1#slide=id.p1
+
+https://docs.google.com/presentation/d/1MSdCI6FpLrxUU3JCqOmAwRtMkc3yaALK/edit?slide=id.p1#slide=id.p1
+
+https://drive.google.com/file/d/1nRZW5JamARkhnUiwuFVSCIXT1BTtVTND/view?usp=classroom_web&authuser=0
+
 cria uma local
 mkdir noma_da_pasta
 
