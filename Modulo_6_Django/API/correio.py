@@ -7,7 +7,7 @@ import pprint
 
 def retorna_dados(cep):
     # criando uma requisicao que consume uma api
-    response = requests.get(f"https://viacep.com.br/ws/{cepk}/json/")
+    response = requests.get(f"https://viacep.com.br/ws/{cep}/json/")
     # se a resposta for ok
     if response.status_code == 200:
         # recupera os dados no formato json
