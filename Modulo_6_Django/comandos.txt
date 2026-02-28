@@ -1,14 +1,18 @@
 https://gamma.app/docs/Modulo-5-Aula-1-Conceitos-Fundamentais-de-WebServices-m60e2cnd59okwt4?authuser=0&mode=doc
 
-https://gamma.app/docs/Compreendendo-o-Framework-Django-e-sua-Arquitetura-7yoofn8g1qx4bwz?mode=doc
+https://docs.google.com/presentation/d/1MSdCI6FpLrxUU3JCqOmAwRtMkc3yaALK/edit?slide=id.p1#slide=id.p1
 
-https://gamma.app/docs/Fluxo-de-uma-Requisicao-no-Django-e9fowna1156a43e?mode=doc
+https://gamma.app/docs/Modulo-6-Aula-1-Compreendendo-o-Framework-Django-e-sua-Arquit-7yoofn8g1qx4bwz?mode=doc
+
+https://gamma.app/docs/Modulo-6-Aula-2-Fluxo-de-uma-Requisicao-no-Django-e9fowna1156a43e?mode=doc
 
 https://docs.google.com/presentation/d/169OEyS3EdaaSuNBMsspQK93WqWq0Ea4a/edit?slide=id.p1#slide=id.p1
 
-https://docs.google.com/presentation/d/1MSdCI6FpLrxUU3JCqOmAwRtMkc3yaALK/edit?slide=id.p1#slide=id.p1
+https://drive.google.com/file/d/1nRZW5JamARkhnUiwuFVSCIXT1BTtVTND/view
 
-https://drive.google.com/file/d/1nRZW5JamARkhnUiwuFVSCIXT1BTtVTND/view?usp=classroom_web&authuser=0
+
+tutorial preparacao django
+https://docs.google.com/document/d/1trWqptvO3Qn4sZzpsgUdplCpt-uOZyaX/edit?usp=sharing&ouid=101133057860705828331&rtpof=true&sd=true
 
 cria uma local
 mkdir noma_da_pasta
@@ -23,8 +27,6 @@ ativar VM
 scripts/activate
 
 Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-Com o ambiente virtual ativo:
 
 instalar django
 pip install django
@@ -47,94 +49,15 @@ python manage.py createsuperuser
 criar app
 python manage.py startapp nomedoap
 
-Material de apoio:
 
-Confirmar merge no VIM
-ESC
-:wq
-ENTER
 
-Vídeo sobre crud django
-	https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
 
-Vídeo sobre django framework
-	https://www.youtube.com/watch?v=gFsIGJR5R8I
+Vídeo
+https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
 
-Bootstrap (ajuda em construção de páginas html)
-	https://getbootstrap.com/
-
-documentação DRF
-	https://www.django-rest-framework.org/#
+Bootstrap
+https://getbootstrap.com/
 
 Documentação django
 	Models
 		https://docs.djangoproject.com/en/6.0/topics/db/models/
-
-codigo para dropdown no home aluno
-<select id="curso" name="curso">
-                <option value="">Selecione um curso</option>
-                    {% for curso in cursos %}
-                        <option value="{{ curso.id }}">
-                            {{ curso.nome }}
-                        </option>
-                    {% endfor %}
-                </select>  
-
-codigo para dropdown no update aluno
-<select id = "curso" name="curso">
-
-            <option value="">Selecione um curso</option>
-
-            {% for curso in cursos %}
-                <option value="{{ curso.id }}" {% if curso == aluno.curso %}selected{% endif %}>
-                    {{ curso.nome }}
-                </option>
-            {% endfor %}
-
-        </select>				
-
-codigo base.html
-{% for message in messages %}
-  <div class = "alert alert-primary" role="alert">                    
-      {{ message }}
-  </div>                
-{% endfor %}
-{% block content %}
-{% endblock %}        
-
-IMPLEMENTANDO API NO PROJETO
-instalar dependencias
-    https://www.django-rest-framework.org/#installation
-
-cria o app api
-implementa o serializers
-    from rest_framework import serializers
-    from aluno.models import Aluno
-
-    class AlunoSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Aluno
-            fields = "__all__"
-            # fields = ["id","nome"]
-
-e as viewsets
-
-    from rest_framework import viewsets
-    from aluno.models import Aluno
-    from .serializers import AlunoSerializer
-
-    # Create your views here.
-    class AlunoViewSet(viewsets.ModelViewSet):
-        queryset = Aluno.objects.all()
-        serializer_class = AlunoSerializer
-
-implementa a rota na urls.py do projeto principal apontando para sua viewset
-    from rest_framework import routers
-    router = routers.DefaultRouter()
-    router.register(r'alunos', AlunoViewSet)
-
-urlpatterns = [
-    path('', include(router.urls)),
-]
-chamando a api na home
-<li> <a href="{% url 'aluno-list' %}">API Alunos</a></li>    

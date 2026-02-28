@@ -1,49 +1,131 @@
-git init
-Inicia repositório 
+https://gamma.app/docs/Modulo-5-Aula-1-Conceitos-Fundamentais-de-WebServices-m60e2cnd59okwt4?authuser=0&mode=doc
 
-git status
-Verifica status
+https://gamma.app/docs/Compreendendo-o-Framework-Django-e-sua-Arquitetura-7yoofn8g1qx4bwz?mode=doc
 
-git add .
-Adiciona arquivos no stage
+https://gamma.app/docs/Fluxo-de-uma-Requisicao-no-Django-e9fowna1156a43e?mode=doc
 
-git commit -m ""
-Grava alterações no stage
+https://docs.google.com/presentation/d/169OEyS3EdaaSuNBMsspQK93WqWq0Ea4a/edit?slide=id.p1#slide=id.p1
 
-git push
-Enviar alterações para repositório remoto
+https://docs.google.com/presentation/d/1MSdCI6FpLrxUU3JCqOmAwRtMkc3yaALK/edit?slide=id.p1#slide=id.p1
 
-git log
-Ver o histórico
+https://drive.google.com/file/d/1nRZW5JamARkhnUiwuFVSCIXT1BTtVTND/view?usp=classroom_web&authuser=0
 
-git checkout ID
-navegar entre versões
 
-git log --all
-ver todas as versões
+tutorial preparacao django
+https://docs.google.com/document/d/1trWqptvO3Qn4sZzpsgUdplCpt-uOZyaX/edit?usp=sharing&ouid=101133057860705828331&rtpof=true&sd=true
 
-git checkou master
-Navega até branch principal
+cria uma local
+mkdir noma_da_pasta
 
-gti checkout -b "nome_da_branch"
-cria uma nova branch
+navega até a pasta com cd noma_da_pasta
+cd noma_da_pasta
 
-git checkout "nome_da_branch"
-Muda para a branch
+criar VM
+python -m venv venv
 
-git branch
-Mostra as branchs
+ativar VM
+scripts/activate
 
-git merge nome_da_branch
-mescla a branch atual com a somar
+Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-git remote add origin URL
-conectar o repositório local ao repositório remoto
+com o ambiente virtual ativo:
 
-git push -u origin master
-Tornar a branch master como padrão
+instalar django
+pip install django
 
-git clone URL
-baixa os arquivos da nuvem para o repositório local
+criar projeto
+django-admin startproject projeto_final .
 
-https://youtu.be/Kyw91mqCHD0?si=1a46HbDb2Jf8LeRE
+comando para rodar o servidor
+python manage.py runserver
+
+comando para parar o servidor
+Control + C 
+
+detecta alterações nos modelos
+python manage.py makemigrations
+
+aplica as migrações no banco de dados
+python manage.py migrate
+
+comando para criar superusuario
+python manage.py createsuperuser
+
+criar app
+python manage.py startapp aluno
+
+TRABALHANDO COM APPS
+
+registrar o app no settings do projeto 
+
+INSTALLED_APPS = [
+'meu_app',
+]
+
+mapear url do app dentro do projeto
+ path('meu_app/', include('meu_app.urls')),
+
+url do app define qual view chamar
+urlpatterns = [
+    path('', home),
+]
+view do app executa rotina
+def home(request):
+    return render(request,'index.html')
+
+Material de apoio:
+
+Vídeo sobre crud django
+	https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
+
+Vídeo sobre django framework
+	https://www.youtube.com/watch?v=gFsIGJR5R8I
+
+Bootstrap (ajuda em construção de páginas html)
+	https://getbootstrap.com/
+
+documentação DRF
+	https://www.django-rest-framework.org/#
+
+Documentação django
+	Models
+		https://docs.djangoproject.com/en/6.0/topics/db/models/
+
+codigo para dropdown no home aluno
+<select id="curso" name="curso">
+                <option value="">Selecione um curso</option>
+                    {% for curso in cursos %}
+                        <option value="{{ curso.id }}">
+                            {{ curso.nome }}
+                        </option>
+                    {% endfor %}
+                </select>  
+
+codigo para dropdown no update aluno
+<select id = "curso" name="curso">
+
+            <option value="">Selecione um curso</option>
+
+            {% for curso in cursos %}
+                <option value="{{ curso.id }}" {% if curso == aluno.curso %}selected{% endif %}>
+                    {{ curso.nome }}
+                </option>
+            {% endfor %}
+
+        </select>				
+
+codigo base.html
+{% for message in messages %}
+  <div class = "alert alert-primary" role="alert">                    
+      {{ message }}
+  </div>                
+{% endfor %}
+{% block content %}
+{% endblock %}        
+
+
+extender de base.html
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Módulo Aluno - SISIFBA{{ block.super }}{% endblock %}
+{% block content%}

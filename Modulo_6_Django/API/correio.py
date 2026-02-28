@@ -3,8 +3,6 @@ import requests
 import pprint
 
 # metodo para consumir uma API
-
-
 def retorna_dados(cep):
     # criando uma requisicao que consume uma api
     response = requests.get(f"https://viacep.com.br/ws/{cep}/json/")

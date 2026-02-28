@@ -3,6 +3,7 @@ from aluno.models import Aluno
 from .serializers import AlunoSerializer
 
 # Create your views here.
+#Implementa um crud completo de forma automatica
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
