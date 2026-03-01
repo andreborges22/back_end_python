@@ -1,12 +1,15 @@
 from rest_framework import viewsets
 from aluno.models import Aluno
-from .serializers import AlunoSerializer
+from curso.models import Curso
+from .serializers import AlunoSerializer, CursoSerializer
 
 # Create your views here.
-#Implementa um crud completo de forma automatica
+# Implementa um crud completo para os alunos de forma automatica
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
 
-#def home(request):
-    #return render(request,'curso/home.html')
+# Implementa um crud completo para os cursos de forma automatica
+class CursoViewSet(viewsets.ModelViewSet):
+    queryset = Curso.objects.all()
+    serializer_class = CursoSerializer
