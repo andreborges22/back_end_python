@@ -24,7 +24,7 @@ criar VM
 python -m venv venv
 
 ativar VM
-scripts/activate
+venv\scripts\activate
 
 Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
@@ -57,7 +57,6 @@ python manage.py startapp aluno
 TRABALHANDO COM APPS
 
 registrar o app no settings do projeto 
-
 INSTALLED_APPS = [
 'meu_app',
 ]
@@ -67,11 +66,11 @@ mapear url do app dentro do projeto
 
 url do app define qual view chamar
 urlpatterns = [
-    path('', home),
+    path('', views.home),
 ]
 view do app executa rotina
 def home(request):
-    return render(request,'index.html')
+    return render(request,'aluno/home.html')
 
 Material de apoio:
 
