@@ -1,22 +1,3 @@
-
-https://github.com/andreborges22/back_end_python
-
-https://gamma.app/docs/Modulo-5-Aula-1-Conceitos-Fundamentais-de-WebServices-m60e2cnd59okwt4?authuser=0&mode=doc
-
-https://docs.google.com/presentation/d/1MSdCI6FpLrxUU3JCqOmAwRtMkc3yaALK/edit?slide=id.p1#slide=id.p1
-
-https://gamma.app/docs/Modulo-6-Aula-1-Compreendendo-o-Framework-Django-e-sua-Arquit-7yoofn8g1qx4bwz?mode=doc
-
-https://gamma.app/docs/Modulo-6-Aula-2-Fluxo-de-uma-Requisicao-no-Django-e9fowna1156a43e?mode=doc
-
-https://docs.google.com/presentation/d/169OEyS3EdaaSuNBMsspQK93WqWq0Ea4a/edit?slide=id.p1#slide=id.p1
-
-https://drive.google.com/file/d/1nRZW5JamARkhnUiwuFVSCIXT1BTtVTND/view?usp=sharing
-
-
-tutorial preparacao django
-https://docs.google.com/document/d/1trWqptvO3Qn4sZzpsgUdplCpt-uOZyaX/edit?usp=sharing&ouid=101133057860705828331&rtpof=true&sd=true
-
 cria uma local
 mkdir noma_da_pasta
 
@@ -24,27 +5,21 @@ navega até a pasta com cd noma_da_pasta
 cd noma_da_pasta
 
 criar VM
-python -m venv venv
+python -m venv meu_projeto
 
 ativar VM
-venv\scripts\activate
+scripts/activate
 
 Se o comando acima der erro, execute este comando: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-comando para rodar o servidor
-python manage.py runserver
-
-comando para parar o servidor
-Control + C 
-
-
-com o ambiente virtual ativo:
 
 instalar django
 pip install django
 
 criar projeto
-django-admin startproject projeto_final .
+django-admin startproject projeto1 .
+
+comando para rodar o servidor
+python manage.py runserver
 
 detecta alterações nos modelos
 python manage.py makemigrations
@@ -56,80 +31,15 @@ comando para criar superusuario
 python manage.py createsuperuser
 
 criar app
-python manage.py startapp aluno
+python manage.py startapp nomedoap
 
-TRABALHANDO COM APPS
 
-registrar o app no settings do projeto 
+Vídeo
+https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
 
-INSTALLED_APPS = [
-'aluno ',
-]
-
-mapear url do app dentro do projeto
- path('meu_app/', include('meu_app.urls')),
-
-url do app define qual view chamar
-urlpatterns = [
-    path('', home),
-]
-view do app executa rotina
-def home(request):
-    return render(request,'index.html')
-
-Material de apoio:
-
-Vídeo sobre crud django
-	https://youtu.be/GGBzMpIAgz4?si=pCzfJLES9hvxPF0q
-
-Vídeo sobre django framework
-	https://www.youtube.com/watch?v=gFsIGJR5R8I
-
-Bootstrap (ajuda em construção de páginas html)
-	https://getbootstrap.com/
-
-documentação DRF
-	https://www.django-rest-framework.org/#
+Bootstrap
+https://getbootstrap.com/
 
 Documentação django
 	Models
 		https://docs.djangoproject.com/en/6.0/topics/db/models/
-
-codigo para dropdown no home aluno
-<select id="curso" name="curso">
-                <option value="">Selecione um curso</option>
-                    {% for curso in cursos %}
-                        <option value="{{ curso.id }}">
-                            {{ curso.nome }}
-                        </option>
-                    {% endfor %}
-                </select>  
-
-codigo para dropdown no update aluno
-<select id = "curso" name="curso">
-
-            <option value="">Selecione um curso</option>
-
-            {% for curso in cursos %}
-                <option value="{{ curso.id }}" {% if curso == aluno.curso %}selected{% endif %}>
-                    {{ curso.nome }}
-                </option>
-            {% endfor %}
-
-        </select>				
-
-codigo base.html
-{% for message in messages %}
-  <div class = "alert alert-primary" role="alert">                    
-      {{ message }}
-  </div>                
-{% endfor %}
-{% block content %}
-{% endblock %}        
-
-
-extender de base.html
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Módulo Aluno - SISIFBA{{ block.super }}{% endblock %}
-{% block content%}

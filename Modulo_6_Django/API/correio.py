@@ -3,9 +3,11 @@ import requests
 import pprint
 
 # metodo para consumir uma API
-def retorna_dados(id):
+
+
+def retorna_dados(cep):
     # criando uma requisicao que consume uma api
-    response = requests.get(f"https://rickandmortyapi.com/api/character/{id}")
+    response = requests.get(f"https://viacep.com.br/ws/{cep}/json/")
     # se a resposta for ok
     if response.status_code == 200:
         # recupera os dados no formato json
@@ -16,14 +18,13 @@ def retorna_dados(id):
 
 
 # passando o dado para a api
-#link_api = "https://rickandmortyapi.com/api/"
-id = input("Informe o id do personagem: ")
-dados = retorna_dados(id)
+cep = input("Informe um CEP no formato 00000000: ")
+dados = retorna_dados(cep)
 # se existrem dados
 if dados:
     # imprima
     #pprint.pprint(dados)
-    print(f"Nome: {dados["name"]}")
+    print(f"Bairro: {dados["bairro"]}")
 else:
     # informe erro
     print("Falha ao recuperar dados")
