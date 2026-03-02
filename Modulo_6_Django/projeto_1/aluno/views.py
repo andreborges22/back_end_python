@@ -76,7 +76,7 @@ def update(request, id):
     curso_id = request.POST.get('curso')
     # resgatando o usuario a ser atualizando do banco
     aluno = Aluno.objects.get(id=id)
-    # atualizando os dados dele
+    # atualizando com os novos dados 
     aluno.nome = nome
     aluno.email = email
     aluno.nascimento = nascimento

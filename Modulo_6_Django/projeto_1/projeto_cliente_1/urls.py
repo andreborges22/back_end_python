@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from api.viewsets import AlunoViewSet,CursoViewSet
+from api.viewsets import AlunoViewSet, CursoViewSet, ProfessorViewSet
 
 # Routers provide an easy way of automatically determining the URL conf.
 # Gera URLs automaticamente
@@ -26,6 +26,7 @@ from api.viewsets import AlunoViewSet,CursoViewSet
 router = routers.DefaultRouter()
 router.register(r'alunos', AlunoViewSet)
 router.register(r'cursos', CursoViewSet)
+router.register(r'professores', ProfessorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
