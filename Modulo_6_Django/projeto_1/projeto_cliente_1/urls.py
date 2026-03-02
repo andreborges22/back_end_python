@@ -15,12 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from rest_framework import routers
-from api.viewsets import AlunoViewSet
+from api.viewsets import AlunoViewSet, CursoViewSet, ProfessorViewSet
+
 # Routers provide an easy way of automatically determining the URL conf.
+# Gera URLs automaticamente
+# Cria as rotas do CRUD com base na ViewSet
+# Adiciona a rota raiz da API (API Root)
 router = routers.DefaultRouter()
 router.register(r'alunos', AlunoViewSet)
+router.register(r'cursos', CursoViewSet)
+router.register(r'professores', ProfessorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -28,6 +34,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('meu_app/', include('meu_app.urls')),
     path('aluno/', include('aluno.urls')),
-    path('professor/',include('professor.urls')),
-    path('curso/',include('curso.urls'),)
+    path('professor/', include('professor.urls')),
+    path('curso/', include('curso.urls'),)
 ]
